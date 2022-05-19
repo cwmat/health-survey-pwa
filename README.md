@@ -58,7 +58,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Contributing
 
 Use bitbucket as the primary repo:
-https://bitbucket.org/timmonsgroup/CLIENT-appname-frontend/src/master/
+xxxxxxxxxxxxxxxxxxx
 
 Generally follows a gitflow workflow but there is no CI/CD. Builds are produced manually with npm and sent to CLIENT as zip files.
 
