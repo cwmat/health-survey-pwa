@@ -1,0 +1,10 @@
+<app-intro-helper-text
+    [header]="this.header"
+    [content]="this.content"
+></app-intro-helper-text>
+
+<app-map
+    (newLocation)="this.updateLocation($event)"
+    (newIntersectStatus)="this.updateIntersectStatus($event)"
+    (isActiveEvent)="this.newActiveMapEvent($event)"
+></app-map>

@@ -1,0 +1,11 @@
+<button 
+    *ngIf="this.offlineObsCount > 0 && !this.isOffline"
+    [matTooltip]="this.tooltipText"
+    [matBadge]="this.offlineObsCount"
+    mat-raised-button
+    color="warn"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+    (click)="this.clicked()">
+    Upload
+</button>

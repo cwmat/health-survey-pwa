@@ -1,0 +1,18 @@
+<div class="appHelperContainer">
+
+    <h2 [ngClass]="this.centerHeader ? 
+        'appHelperHeader appHelperText appCenterText': 
+        'appHelperHeader appHelperText'">
+        {{ this.header }}
+    </h2>
+
+    <mat-divider></mat-divider>
+
+    <div *ngIf="!this.insertHtmlContent" class="appHelperContent appHelperText">
+        {{ this.content }}
+    </div>
+
+    <div *ngIf="this.insertHtmlContent" class="appHelperContent appHelperText" [innerHtml]="this.content">
+    </div>
+
+</div>

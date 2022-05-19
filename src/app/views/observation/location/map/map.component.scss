@@ -1,0 +1,99 @@
+@import "../../../../app.global.scss";
+
+mgl-map {
+  height: 100%;
+  width: 100%;
+}
+
+#appMapContainer {
+  width: 100%;
+  height: 65vh;
+  position: relative;
+}
+
+.appSelectLocationContainer {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.appSearchContainer {
+  position: absolute;
+  top: 0.5rem;
+  right: 5rem;
+}
+
+.mapboxgl-user-location-dot,
+.maplibregl-user-location-dot {
+  background-color: #3e0000;
+}
+
+#appBasemapToggle {
+  position: absolute;
+  left: 10px;
+  bottom: 2.5rem;
+  background: #ffffffc7;
+  padding: 0.25rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.appOfflineButton {
+  outline: #000 solid 1px;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+  /* Styles */
+  .appSearchContainer {
+    position: absolute;
+    top: 3rem;
+    left: 0.3rem;
+    right: auto;
+  }
+
+  #appBasemapToggle.appSuperZoom,
+  .appSearchContainer.appSuperZoom {
+    outline: 1px solid #000;
+    border-radius: 1rem;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+  /* Styles */
+  .appSearchContainer {
+    position: absolute;
+    top: 3rem;
+    left: 0.3rem;
+    right: auto;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+  /* Styles */
+  #appMapContainer {
+    height: 50vh;
+  }
+
+  .appSearchContainer {
+    top: 0.5rem;
+    right: 5rem;
+    left: auto;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+  /* Styles */
+  #appMapContainer {
+    height: 65vh;
+  }
+
+  .appSearchContainer {
+    top: 0.5rem;
+    right: 5rem;
+    left: auto;
+  }
+}

@@ -1,0 +1,147 @@
+@import '../../../app.global.scss';
+
+.appContactContainer {
+    min-height: 20vh;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.mat-form-field {
+    min-width: 60%;
+    font-size: 1rem;
+}
+
+.appFormContainer {
+    margin-bottom: 2.75rem;
+}
+
+.appFieldRow {
+    width: 100%;
+}
+
+.appSpacer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.appHide {
+    opacity: 0;
+}
+
+.appSpaceAtBottom {
+    margin-bottom: 10rem;
+}
+
+#observation-details {
+    max-height: 8rem;
+}
+
+.appPhotoContainer {
+    margin-top: 1.5rem;
+}
+
+#appDetailsField {
+    min-width: 100%;
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    .appFormRowContainer {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        min-width: 100%;
+    }
+
+    .appPhotoContainer {
+        margin-top: 8rem;
+    }
+
+    .appMobileMarginBottom {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    .appFormRowContainer {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        min-width: 100%;
+    }
+
+    .appPhotoContainer {
+        margin-top: 8rem;
+    }
+
+    .appMobileMarginBottom {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .mat-form-field {
+        min-width: 60%;
+    }
+
+    .appInfoIcon {
+        margin-left: 1.5rem;
+    }
+
+    .appPhotoContainer {
+        margin-top: 1.5rem;
+    }
+
+    .appMobileMarginBottom {
+        margin-bottom: 0;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .mat-form-field {
+        min-width: 60%;
+    }
+
+    .appInfoIcon {
+        margin-left: 1.5rem;
+    }
+
+    .appPhotoContainer {
+        margin-top: 1.5rem;
+    }
+
+    .appMobileMarginBottom {
+        margin-bottom: 0;
+    }
+}

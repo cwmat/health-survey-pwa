@@ -1,0 +1,71 @@
+@import "../../../../app.global.scss";
+
+.appSearchForm {
+  min-width: 9.375rem;
+  max-width: 31.25rem;
+  width: 100%;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  height: 3.25rem;
+}
+
+.appSearchContainer {
+  width: 30rem;
+  padding: 0.1rem 1rem;
+  background-color: #ffffffc7;
+  border-radius: 1rem;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+  /* Styles */
+  .appSearchContainer {
+    width: 15rem;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+  /* Styles */
+  .appSearchContainer {
+    width: 15rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+  /* Styles */
+  .appSearchForm {
+    min-width: 9.375rem;
+    max-width: 31.25rem;
+    width: 100%;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    height: 3.25rem;
+  }
+
+  .appSearchContainer {
+    width: 30rem;
+    padding: 0.1rem 1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+  /* Styles */
+  .appSearchForm {
+    min-width: 9.375rem;
+    max-width: 31.25rem;
+    width: 100%;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    height: 3.25rem;
+  }
+
+  .appSearchContainer {
+    width: 30rem;
+    padding: 0.1rem 1rem;
+    border-radius: 1rem;
+  }
+}

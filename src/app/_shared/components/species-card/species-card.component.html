@@ -1,0 +1,29 @@
+<mat-card class="appSpeciesCard">
+    <mat-card-header>
+      <mat-card-title>{{ this.species?.Name || '' }}</mat-card-title>
+      <mat-card-subtitle *ngIf="this.species?.PhotoCredit">Photo Credit: {{ this.species?.PhotoCredit || '' }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!--  Image data -->
+    <img *ngIf="!this.isLoading && this.hasImage && this.imageData" mat-card-image [src]="this.imageData" alt="Selected species, description provided below">
+
+    <!--  Loading spinner -->
+    <div *ngIf="this.isLoading" class="appSpeciesSpinner">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <!--  Not image data or an issue occured -->
+    <div *ngIf="!this.hasImage || (this.hasImage && !this.imageData)" class="appSpeciesNoImage">Sorry, this species does not have a photo available or you may be offline. Please refer to the description below to assist with species identification.</div>
+
+    <mat-card-content>
+      <p>
+        {{ this.species?.Description || 'Sorry, this species does not have a description available.' }}
+      </p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-footer>
+        <p class="appSpeciesFooter">
+          If this doesn't appear to be the species you observed, try selecting a different species or select Unknown.
+        </p>
+    </mat-card-footer>
+</mat-card>

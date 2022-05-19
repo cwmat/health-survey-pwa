@@ -1,0 +1,63 @@
+<div id="appHomeContainer" [ngClass]="{appSuperZoom: this.isSuperZoom}" [style]="this.basePageHeightStyle">
+    <!-- Header bar -->
+    <app-header></app-header>
+
+    <!-- Full page image defined in SCSS -->
+    <div id="appHomeImage" [ngStyle]="{'background-image': 'url(' + this.currentBgImg + ')'}"></div>
+
+    <div id="appHomepageContent" #mainContents>
+
+        <div class="appFillContainer">
+
+            <div
+                fxLayout="row"
+                fxLayout.xs="column"
+                fxLayout.sm="column"
+                fxLayoutAlign="end center"
+                fxLayoutAlign.xs="start center"
+                fxLayoutAlign.sm="start center"
+                fxFlex>
+
+                <div
+                    fxFlex="50"
+                    fxFlex.xs="100"
+                    fxFlex.sm="100"
+                    id="appHeroContainer">
+
+                    <div class="appHomepageText" id="appHeroContent">
+                        <p>
+                            You can play a critical role in wildlife health surveillance!
+                        </p>
+
+                        <p>
+                            The Pennsylvania Game Commission's {{ this.appName }} enables the public to easily report observations of wildlife health issues occurring within the Commonwealth. Any wild birds or mammals that appear abnormal, injured, sick, or are found dead should be reported. Remember to always remain at a safe distance when observing wildlife and do not handle wildlife unless you are hunting, trapping, or authorized to do so.
+
+                        </p>
+                        <p>
+                            If you require immediate assistance, please call the Game Commission at <a class="appHomeLink" [href]="'tel:' + this.gameCommissionPhone">{{ this.gameCommissionPhone }}</a>.
+                        </p>
+
+                        <p>
+                            Thank you for helping the Game Commission track and respond to wildlife health events! More information can be found at <a href="https://www.CLIENT.pa.gov/wildlifehealth" target="_blank" class="appHomeLink">CLIENT.pa.gov/wildlifehealth</a>.
+                        </p>
+                    </div>
+
+                    <button mat-flat-button color="basic" id="appObservationButton" type="button" (click)="this.createObservation()">
+                        Submit an Observation
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <app-footer class="appOnHomepage" [ngClass]="{appSuperZoom: this.isSuperZoom}"></app-footer>
+
+</div>
+
+<div id="appUploadButtonContainer">
+    <app-upload-offline (uploadProcessed)="this.uploadProcessed($event)" (alluploadsProcessed)="this.alluploadsProcessed($event)" [offlineObs]="this.offlineObs" [offlineObsCount]="this.offlineObsCount"></app-upload-offline>
+</div>

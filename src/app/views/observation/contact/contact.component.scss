@@ -1,0 +1,89 @@
+@import '../../../app.global.scss';
+
+.appContactContainer {
+    min-height: 20vh;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.mat-form-field {
+    min-width: 60%;
+    font-size: 1rem;
+}
+
+.appFormContainer {
+    margin-bottom: 1.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    .appFormRowContainer {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        min-width: 100%;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    .appFormRowContainer {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        min-width: 100%;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .mat-form-field {
+        min-width: 60%;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+    /* Styles */
+    .appContactContainer {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .mat-form-field {
+        min-width: 60%;
+    }
+}

@@ -1,0 +1,183 @@
+@import "../../app.global.scss";
+
+#appHomeContainer {
+    background-color: #000;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+$imgKey: random(14);
+
+$list: homepage_01, homepage_02, homepage_03, homepage_04, homepage_05, homepage_06, homepage_07, homepage_08, homepage_09, homepage_10, homepage_11, homepage_12, homepage_13, homepage_14;
+$nth: nth($list, $imgKey);
+
+#appHomeImage {
+    height: 100%;
+    // background-image: url("~src/assets/images/#{$nth}.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#appHomepageContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+}
+
+.appFillContainer {
+    background: linear-gradient(270deg, #2a381e 0%, rgba(42,56,30,0.25) 100%);
+    height: 100%
+}
+
+#appHeroContainer {
+    margin-right: 3rem;
+}
+
+.appHomepageText {
+    text-align: end;
+    color: #fff;
+}
+
+#appHeroHeader {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 3.75rem;
+}
+
+#appHeroContent {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.875rem;
+}
+
+#appObservationButton {
+    float: right;
+    color: #0B0603;
+    font-size: 1.438rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 2rem;
+    margin-top: 2rem;
+    min-height: 3.75rem;
+    min-width: 21.875rem;
+}
+
+$disclaimerSpacing: 2rem;
+#appDisclaimer {
+    position: absolute;
+    bottom: $disclaimerSpacing;
+    left: $disclaimerSpacing;
+    color: #fff;
+    margin-right: $disclaimerSpacing;
+}
+
+:host ::ng-deep app-header {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+:host ::ng-deep app-footer.appOnHomepage {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    bottom: 0;
+}
+
+#appUploadButtonContainer {
+    position: fixed;
+    left: 2rem;
+    bottom: 7rem;
+}
+
+.appFillContainer div {
+    max-width: 100vw;
+}
+
+.appHomeLink {
+    color: #fff;
+}
+  
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    /* Styles */
+    #appHeroContainer {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .appHomepageText {
+        text-align: center;
+    }
+
+    #appObservationButton {
+        float: none;
+        margin: 2rem auto auto auto;
+        display: block;
+    }
+
+    #appHomepageContent {
+        padding-top: $header-bar-height;
+    }
+
+    #appHomeContainer.appSuperZoom {
+        height: 600vh !important;
+    }
+
+    #appUploadButtonContainer {
+        bottom: 7rem;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+    #appHomepageContent {
+        padding-top: $header-bar-height;
+    }
+
+    :host ::ng-deep app-footer.appOnHomepage.appSuperZoom {
+        bottom: 0;
+    }
+
+    #appUploadButtonContainer {
+        bottom: 7rem;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+    #appHomepageContent {
+        padding-top: 0;
+    }
+
+    :host ::ng-deep app-footer.appOnHomepage {
+        bottom: 0;
+    }
+
+    #appUploadButtonContainer {
+        bottom: 5rem;
+    }
+  }
+  
+  /* Large screens ----------- */
+  @media only screen and (min-width: $screen-width-monitor) {
+    #appHomepageContent {
+        padding-top: 0;
+    }
+
+    :host ::ng-deep app-footer.appOnHomepage {
+        bottom: 0;
+    }
+
+    #appUploadButtonContainer {
+        bottom: 5rem;
+    }
+  }

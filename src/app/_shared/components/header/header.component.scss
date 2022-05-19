@@ -1,0 +1,107 @@
+@import "../../../app.global.scss";
+
+#appHeader,
+#appHeader .mat-toolbar-row
+{
+    height: $header-bar-height;
+}
+
+.appSpacer {
+    flex: 1 1 auto;
+}
+
+.appHeaderLogo {
+    height: $header-bar-image-max-height;
+    max-height: $header-bar-image-max-height;
+    width: 64px;
+    min-width: 40px;
+    margin-top: 0.5rem;
+}
+
+#appHeaderText {
+    margin-left: 2rem;
+}
+
+#appHeaderH1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+#appHeaderH2 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.18rem;
+    color: $color-header-subtitle;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    .appHeaderLogo {
+        height: $header-bar-image-max-height;
+        max-height: $header-bar-image-max-height;
+        width: 64px;
+        margin-top: 0.5rem;
+    }
+    
+    #appHeaderText {
+        margin-left: 0.25rem;
+    }
+    
+    #appHeaderH1 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.75rem;
+    }
+    
+    #appHeaderH2 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1rem;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile-small) {    
+    #appHeaderH1 {
+        font-size: 1rem;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+    .appHeaderLogo {
+        height: $header-bar-image-max-height;
+        max-height: $header-bar-image-max-height;
+        width: 64px;
+        margin-top: 0.5rem;
+    }
+    
+    #appHeaderText {
+        margin-left: 2rem;
+    }
+    
+    #appHeaderH1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.75rem;
+    }
+    
+    #appHeaderH2 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.18rem;
+    }
+}

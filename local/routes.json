@@ -1,0 +1,10 @@
+{
+    "/PAWWPublicFacing.svc/GetAnimalCountLookUp": "/GetAnimalCountLookUp",
+    "/PAWWPublicFacing.svc/GetWildlifeHealthAffilationLookUp": "/GetWildlifeHealthAffilationLookUp",
+    "/PAWWPublicFacing.svc/GetSpeciesLookUp": "/GetSpeciesLookUp",
+    "/PAWWPublicFacing.svc/GetYesNoLookUp": "/GetYesNoLookUp",
+    "/PAWWPublicFacing.svc/GetWildlifeAgeLookUp": "/GetWildlifeAgeLookUp",
+    "/PAWWPublicFacing.svc/GetCaptiveLookup": "/GetCaptiveLookup",
+    "/PAWWPublicFacing.svc/PostObs": "/PostObs",
+    "/PAWWPublicFacing.svc/PostObsMedia": "/PostObsMedia"
+}

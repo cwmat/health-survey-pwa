@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@import "rfs/scss";
+@import "~maplibre-gl/dist/maplibre-gl.css";
+@import "./app/app.global.scss";
+
+// Vars
+$stepper-padding: 5rem;
+
+// Whole page
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+// App specific
+.appFillContainer {
+  height: 100%;
+}
+
+.appFullWidth {
+  width: 100%;
+}
+
+#appObservationFooter {
+  background-color: $color-subtitle-light;
+  width: 100%;
+  height: 4rem;
+  position: sticky;
+  bottom: 0;
+  padding-left: $stepper-padding;
+  padding-right: $stepper-padding;
+  z-index: 500;
+}
+
+// Center Text
+.appCenterText {
+  text-align: center;
+}
+
+// Icons
+.appInfoIcon {
+  color: $color-primary;
+  cursor: pointer;
+}
+
+// Snackbar
+.mat-simple-snackbar-action {
+  color: #cde12a;
+}
+
+// Tooltip
+.mat-tooltip {
+  font-size: 1rem;
+}
+
+// Fields
+.appRequiredAsterisk {
+  color: #ff0000;
+  margin-left: 0.25rem;
+}
+
+.appRed {
+  color: #ff0000;
+}
+
+// Material Modals
+.cdk-overlay-pane {
+  max-height: 100vh;
+}
+
+.appConfirmTop {
+  padding-top: 0;
+  margin-bottom: 1rem;
+}
+
+// Captcha
+.grecaptcha-badge { 
+  visibility: hidden;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+  /* Styles */
+  $stepper-padding-mobile: 0.5rem;
+  #appObservationFooter {
+    height: 3.5rem;
+    padding-left: $stepper-padding-mobile;
+    padding-right: $stepper-padding-mobile;
+  }
+}
+
+@media only screen and (max-width: $screen-width-mobile-small) {
+  /* Styles */
+  #appHeader .mat-toolbar-row {
+    padding: 0;
+  }
+
+  #appHomeContainer {
+    overflow-x: auto;
+  }
+}

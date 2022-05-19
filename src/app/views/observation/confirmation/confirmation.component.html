@@ -1,0 +1,73 @@
+<div class="appConfirmationContainer">
+
+    <app-intro-helper-text
+        [header]="this.header"
+        [centerHeader]="true"
+    ></app-intro-helper-text>
+
+    <!-- If the user gets here and the obs is fresh -->
+    <div *ngIf="this.confirmationState?.success && this.isWithinDateRange()  && !this.confirmationState?.requiresAction" class="appConfirmationContent">
+            <div>
+                <p>Thank you for submitting an observation to the Pennsylvania Game Commission's {{ this.appName }}.</p>
+                <p>Your confirmation number is: <span class="appConfirmationNumber">{{ this.confirmationState?.confirmation || '' }}</span></p>
+                <div [innerHtml]="this.messageNoActionRequired"></div>
+                <div>Remember to always remain at a safe distance when observing wildlife and do not handle wildlife unless you are hunting, trapping, or authorized to do so. More information can be found at <a href="https://CLIENT.pa.gov/wildlifehealth" target="_blank">CLIENT.pa.gov/wildlifehealth</a>.</div>
+            <button
+                mat-flat-button color="accent"
+                class="appBackToHomeButton"
+                type="button"
+                (click)="this.home()">
+                    Return Home
+            </button>
+        </div>
+    </div>
+
+    <!-- If the user gets here and the obs is fresh and meets additional Qs -->
+    <div *ngIf="this.confirmationState?.success && this.isWithinDateRange() && this.confirmationState?.requiresAction" class="appConfirmationContent">
+        <div>
+            <p>Thank you for submitting an observation to the Pennsylvania Game Commission's {{ this.appName }}.</p>
+            <p>Your confirmation number is: <span class="appConfirmationNumber">{{ this.confirmationState?.confirmation || '' }}</span></p>
+            <div [innerHtml]="this.messageActionRequired"></div>
+            <div>Remember to always remain at a safe distance when observing wildlife and do not handle wildlife unless you are hunting, trapping, or authorized to do so. More information can be found at <a href="https://CLIENT.pa.gov/wildlifehealth" target="_blank">CLIENT.pa.gov/wildlifehealth</a>.</div>
+            <button
+                mat-flat-button color="accent"
+                class="appBackToHomeButton"
+                type="button"
+                (click)="this.home()">
+                    Return Home
+            </button>
+        </div>
+    </div>
+
+    <!-- If the user gets here and the obs is too old -->
+    <div *ngIf="this.confirmationState?.success && !this.isWithinDateRange()" class="appConfirmationContent">
+        <div>
+            <p>Thank you for submitting an observation to the Pennsylvania Game Commission's {{ this.appName }}.</p>
+            <p>Your confirmation number is: <span class="appConfirmationNumber">{{ this.confirmationState?.confirmation || '' }}</span></p>
+            <div [innerHtml]="this.messageNoActionRequired"></div>
+            <div>Remember to always remain at a safe distance when observing wildlife and do not handle wildlife unless you are hunting, trapping, or authorized to do so. More information can be found at <a href="https://CLIENT.pa.gov/wildlifehealth" target="_blank">CLIENT.pa.gov/wildlifehealth</a>.</div>
+            <button
+                mat-flat-button color="accent"
+                class="appBackToHomeButton"
+                type="button"
+                (click)="this.home()">
+                    Return Home
+            </button>
+        </div>
+    </div>
+
+    <!-- Got here in error -->
+    <div *ngIf="!this.confirmationState?.success" class="appConfirmationContent">
+        <div>
+            <p>You may have arrived on this page in error.  Please return home and start over.</p>
+            <button
+                mat-flat-button color="accent"
+                class="appBackToHomeButton"
+                type="button"
+                (click)="this.homeNoReset()">
+                    Return Home
+            </button>
+        </div>
+    </div>
+
+</div>

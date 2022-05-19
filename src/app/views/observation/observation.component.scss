@@ -1,0 +1,51 @@
+@import "../../app.global.scss";
+
+$stepper-padding: 5rem;
+::ng-deep .appStepperContainer .mat-stepper-horizontal .mat-horizontal-stepper-header-container {
+    background-color: $color-subtitle-light;
+    padding-left: $stepper-padding;
+    padding-right: $stepper-padding;
+}
+
+.appStepperContainer {
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+.appStepperButton {
+    min-width: 9rem;
+}
+
+.appStepperButton:first-of-type {
+    margin-right: 2rem;
+}
+
+#test {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+::ng-deep .mat-horizontal-content-container {
+    margin-left: $stepper-padding;
+    margin-right: $stepper-padding;
+}
+
+::ng-deep .appStepperContainer .mat-stepper-vertical .mat-step .mat-step-header {
+    outline: #000000 solid 1px;
+    outline-offset: -4px;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    /* Styles */
+    $stepper-padding-mobile: 0.5rem;
+    ::ng-deep .mat-horizontal-content-container {
+        margin-left: $stepper-padding-mobile;
+        margin-right: $stepper-padding-mobile;
+    }
+
+    ::ng-deep .mat-vertical-content-container {
+        margin-left: 0 !important;
+    }
+}

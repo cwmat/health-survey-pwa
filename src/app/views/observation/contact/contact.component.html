@@ -1,0 +1,82 @@
+<app-intro-helper-text
+    [header]="this.header"
+    [content]="this.content"
+></app-intro-helper-text>
+
+<div class="appContactContainer">
+
+    <form [formGroup]="contactForm">
+
+        <div 
+            fxLayout="row" 
+            fxLayout.xs="column" 
+            fxLayout.sm="column" 
+            fxLayoutAlign="start center" 
+            fxLayoutAlign.xs="start start" 
+            fxLayoutAlign.sm="start start"
+            fxFlex>
+
+            <div 
+                fxFlex="50" 
+                fxFlex.xs="100" 
+                fxFlex.sm="100" 
+                class="appFormRowContainer">
+                
+                <div class="appFormContainer">
+                    <mat-form-field>
+                        <mat-label for="contact-name">Name</mat-label>
+                        <input matInput id="contact-name" type="text" formControlName="name">
+                        <mat-hint>First and last name</mat-hint>
+                        <mat-error *ngIf="this.name?.invalid && this.name?.errors?.required">This field is required.</mat-error>
+                        <mat-error *ngIf="this.name?.invalid && this.name?.errors?.maxLength">Please enter no more than 50 characters.</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="appFormContainer">
+                    <mat-form-field>
+                        <mat-label for="contact-affiliation">Affiliation</mat-label>
+                        <mat-select id="contact-affiliation" formControlName="affiliation">
+                            <mat-option *ngFor="let aff of this.affiliations" [value]="aff?.RefTableDataId">
+                                {{aff?.Name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint>Affiliation</mat-hint>
+                        <mat-error *ngIf="this.affiliation?.invalid && this.affiliation?.errors?.required">This field is required.</mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div 
+                fxFlex="50" 
+                fxFlex.xs="100" 
+                fxFlex.sm="100" 
+                class="appFormRowContainer">
+                
+                <div class="appFormContainer">
+                    <mat-form-field>
+                        <mat-label for="contact-email">Email</mat-label>
+                        <input matInput id="contact-email" type="email" formControlName="email">
+                        <mat-hint>example@gmail.com</mat-hint>
+                        <mat-error *ngIf="this.email?.invalid && this.email?.errors?.pattern">Email must be in the following format: example@gmail.com</mat-error>
+                        <mat-error *ngIf="this.email?.invalid && this.email?.errors?.required">This field is required.</mat-error>
+                        <mat-error *ngIf="this.name?.invalid && this.name?.errors?.maxLength">Please enter no more than 50 characters.</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="appFormContainer">
+                    <mat-form-field>
+                        <mat-label for="contact-phone">Phone Number</mat-label>
+                        <input matInput id="contact-phone" appPhoneMask type="tel" maxlength="14" formControlName="phone">
+                        <mat-hint>Must be 10 digits</mat-hint>
+                        <mat-error *ngIf="this.phone?.invalid && this.phone?.errors">This field is required and must be 10 digits.</mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

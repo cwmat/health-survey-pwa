@@ -1,0 +1,52 @@
+@import "../../../app.global.scss";
+
+#appFooter {
+    background-color: $color-primary;
+    color: #fff;
+    min-height: $footer-height;
+}
+
+.appFooterTextContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.appTextCenter {
+    text-align: center;
+}
+
+.appTextRight {
+    text-align: right;
+}
+
+a {
+    color: #fff;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    .appTextRight {
+        text-align: center;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+    .appTextRight {
+        text-align: center;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+    .appTextRight {
+        text-align: right;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+    .appTextRight {
+        text-align: right;
+    }
+}

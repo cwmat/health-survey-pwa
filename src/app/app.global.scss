@@ -1,0 +1,35 @@
+// Core colors
+$color-primary: #2a381e;
+$color-primary-heavy: #192412;
+$color-primary-light: #bfc3bc;
+$color-subtitle-light: #f2f2f2;
+$color-helper-text: #434343;
+$color-header-subtitle: #dadada;
+
+$color-accent: #000000;
+$color-accent-heavy: #000000;
+$color-accent-light: #b3b3b3;
+
+$color-warning: #ef5050;
+$color-warning-heavy: #e83737;
+$color-warning-light: #facbcb;
+
+// Map colors
+$color-map-icon-fill: #ff2218;
+$color-map-icon-outline: #3e0000;
+
+// Screen size breaks
+$screen-width-mobile-small: 320px;
+$screen-width-mobile-small-landscape: 321px;
+$screen-width-mobile: 480px;
+$screen-width-tablet: 768px;
+$screen-width-laptop: 1024px;
+$screen-width-desktop: 1224px;
+$screen-width-monitor: 1824px;
+
+
+// Sizes
+$header-bar-height: 4.5rem;
+$header-bar-image-max-height: calc($header-bar-height - 0.3rem);
+$footer-height: 2.7rem;
+$footer-height-offet: 3.5rem;

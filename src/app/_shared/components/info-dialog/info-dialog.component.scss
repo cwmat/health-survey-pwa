@@ -1,0 +1,23 @@
+@import "../../../app.global.scss";
+
+.appDialogTitle {
+    color: $color-primary;
+}
+
+.appMainText {
+    color: $color-helper-text;
+}
+
+.appExtraSpace {
+    margin-top: 2rem;
+}
+
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+    /* Styles */
+    .appMainText {
+        padding-top: 2rem;
+    }
+}

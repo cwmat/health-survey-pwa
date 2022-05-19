@@ -1,0 +1,50 @@
+@import "app/app.global.scss";
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: $screen-width-mobile-small) and (max-device-width: 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile-small) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: $screen-width-tablet) and (max-device-width: $screen-width-laptop) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: $screen-width-tablet) and (max-device-width: $screen-width-laptop) and (orientation: landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: $screen-width-tablet) and (max-device-width: $screen-width-laptop) and (orientation: portrait) {
+  /* Styles */
+}
+/**********
+  iPad 3
+  **********/
+@media only screen and (min-device-width: $screen-width-tablet) and (max-device-width: $screen-width-laptop) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media only screen and (min-device-width: $screen-width-tablet) and (max-device-width: $screen-width-laptop) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+  /* Styles */
+}

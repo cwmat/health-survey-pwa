@@ -1,0 +1,13 @@
+<div class="appDropzone" ngx-dropzone [accept]="'image/*,video/*'" (change)="onSelect($event)" [expandable]="true">
+	<ngx-dropzone-label>
+		<div>
+			<h2>Drag files here or click to add photos/videos.</h2>
+		</div>
+	</ngx-dropzone-label>
+    <ng-container *ngFor="let f of files">
+        <ngx-dropzone-image-preview *ngIf="f.type.includes('image')" ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f)">
+        </ngx-dropzone-image-preview>
+        <ngx-dropzone-video-preview *ngIf="f.type.includes('video')" ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f)">
+        </ngx-dropzone-video-preview>
+    </ng-container>
+</div>

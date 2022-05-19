@@ -1,0 +1,176 @@
+<div id="appMapContainer">
+
+    <!-- Main Map -->
+    <mgl-map
+        #mainMap
+        [style]="this.basemapStyle"
+        [zoom]="[this.zoom]"
+        [center]="this.center"
+        (mapLoad)="this.map = $event"
+        (mapClick)="this.mapClicked($event)"
+        [cursorStyle]="this.cursorStyle"
+        [fitBounds]="this.bounds"
+        [fitBoundsOptions]="{
+            maxZoom: 12
+        }"
+    >
+        <!-- Map Controls -->
+        <mgl-control mglNavigation position="top-right"></mgl-control>
+        <mgl-control mglScale position="bottom-left"></mgl-control>
+        <mgl-control
+            #geolocater
+            mglGeolocate
+            [positionOptions]="{
+                enableHighAccuracy: true
+            }"
+            [trackUserLocation]="true"
+            (geolocate)="this.newGPSLocation($event)"
+            (error)="this.noGPSLocation($event)"
+        ></mgl-control>
+
+        <!-- Map Features -->
+        <mgl-geojson-source id="point">
+            <mgl-feature
+                *ngIf="this.showPoint"
+                [properties]=""
+                [geometry]="{
+                    type: 'Point',
+                    coordinates: this.coordinates
+                }"
+            ></mgl-feature>
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="paCounty"
+            [data]="this.paCounty"
+        >
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="region"
+            [data]="this.region"
+        >
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="stateForest"
+            [data]="this.stateForest"
+        >
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="statePark"
+            [data]="this.statePark"
+        >
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="sgl"
+            [data]="this.sgl"
+        >
+        </mgl-geojson-source>
+
+        <mgl-geojson-source
+            id="road"
+            [data]="this.road"
+        >
+        </mgl-geojson-source>
+
+        <!-- Offline Map Layers -->
+        <ng-container *ngIf="this.offlineLayersOn">
+            <mgl-layer
+                #targetLayerPaCounty
+                id="paCounty"
+                type="fill"
+                source="paCounty"
+                [paint]="paCountyPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayerSgl
+                id="sgl"
+                type="fill"
+                source="sgl"
+                [paint]="sglPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayerStateForest
+                id="stateForest"
+                type="fill"
+                source="stateForest"
+                [paint]="stateForestPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayerStatePark
+                id="statePark"
+                type="fill"
+                source="statePark"
+                [paint]="stateParkPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayerStateForest
+                id="road"
+                type="line"
+                source="road"
+                [paint]="roadPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayerRegion
+                id="region"
+                type="line"
+                source="region"
+                [paint]="regionPaint"
+            ></mgl-layer>
+
+            <mgl-layer
+                #targetLayer
+                id="point"
+                type="circle"
+                source="point"
+                [paint]="layerPaint"
+            ></mgl-layer>
+        </ng-container>
+
+        <!-- Online Map Layers -->
+        <ng-container *ngIf="!this.offlineLayersOn">
+
+            <mgl-layer
+                #targetLayer
+                id="point"
+                type="circle"
+                source="point"
+                [paint]="layerPaint"
+            ></mgl-layer>
+        </ng-container>
+
+    <!-- End Main Map -->
+    </mgl-map>
+
+    <div class="appSelectLocationContainer">
+        <button mat-flat-button color="basic" *ngIf="!this.isActive" [disabled]="this.isActive" (click)="this.startSelect()" [ngClass]="{appOfflineButton: this.isOffline}">Select Location</button>
+        <button mat-flat-button color="basic"  *ngIf="this.isActive" [disabled]="!this.isActive" (click)="this.saveLocation()" [ngClass]="{appOfflineButton: this.isOffline}">Save Location</button>
+    </div>
+
+    <!-- Search bar -->
+    <div class="appSearchContainer" *ngIf="!this.isOffline" [ngClass]="{appSuperZoom: this.isSuperZoom}">
+        <app-geo-search
+            (zoomToCandidates)="zoomToCandidates($event)"
+            [mapCenter]="this.center">
+        </app-geo-search>
+    </div>
+
+    <!-- Basemap Toggle -->
+    <div id="appBasemapToggle" *ngIf="!this.isOffline" [ngClass]="{appSuperZoom: this.isSuperZoom}">
+      <mat-slide-toggle (change)="this.basemapToggle($event)">Aerial Imagery</mat-slide-toggle>
+    </div>
+
+</div>
+
+<!-- Show Coordinates -->
+<div *ngIf="this.coordinates?.length && this.coordinates.length > 0">
+    Lat: {{ this.coordinates[1] | number }}, Long: {{ this.coordinates[0] | number }}
+</div>

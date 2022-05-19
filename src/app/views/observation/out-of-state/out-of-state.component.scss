@@ -1,0 +1,43 @@
+@import '../../../app.global.scss';
+
+.appOutOfStateContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: calc(100vh - #{$header-bar-height} - #{$footer-height-offet});
+}
+
+.appOutOfStateContent {
+    text-align: center;
+    font-weight: 500;
+    color: $color-helper-text;
+    line-height: 2.625rem;
+    font-size: 1.125rem;
+}
+
+.appOutOfStateContent a {
+    color: $color-helper-text;
+}
+
+.appBackToHomeButton {
+    font-size: 1.125rem;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: $screen-width-mobile) {
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: $screen-width-mobile-small-landscape) {
+    .appBackToHomeButton{
+        z-index: 5000;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: $screen-width-desktop) {
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: $screen-width-monitor) {
+}

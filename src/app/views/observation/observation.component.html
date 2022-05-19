@@ -1,0 +1,96 @@
+<div class="appStepperContainer">
+
+    <mat-stepper [linear]="this.isLinear" [orientation]="(this.stepperOrientation | async)!" #stepper>
+
+        <!-- Change default 'edit' icon -->
+        <ng-template matStepperIcon="edit">
+          <mat-icon>done</mat-icon>
+        </ng-template>
+
+        <!-- Step 1 -->
+        <mat-step [completed]="this.locationIsValid">
+
+            <ng-template matStepLabel>Location</ng-template>
+
+            <app-location (isValid)="this.locationIsValid = $event; this.checkValid()" #location></app-location>
+
+        </mat-step>
+
+        <!-- Step 2 -->
+        <mat-step [completed]="this.contactIsValid && this.locationIsValid && this.hasVisitedContactTab">
+
+            <ng-template matStepLabel>Contact</ng-template>
+
+            <app-contact (isValid)="this.contactIsValid = $event; this.checkValid()" #contact></app-contact>
+
+        </mat-step>
+
+        <!-- Step 3 -->
+        <mat-step [completed]="this.observationIsValid" class="appLastStep">
+
+          <ng-template matStepLabel>Observation</ng-template>
+
+          <app-animal (isValid)="this.observationIsValid = $event; this.checkValid()" #animal></app-animal>
+
+        </mat-step>
+
+      </mat-stepper>
+
+</div>
+
+<footer id="appObservationFooter">
+
+  <div fxFlex fxLayoutAlign="end center">
+
+    <ng-container *ngIf="this.obsStore.getObservation() | async as obsData;">
+
+      <ng-container *ngIf="obsData.inState">
+
+        <button
+          *ngIf="stepper.selectedIndex > 0"
+          mat-flat-button color="primary"
+          class="appStepperButton"
+          type="button"
+          (click)="stepper.previous()">
+            Back
+        </button>
+
+        <button
+          *ngIf="stepper.selectedIndex < this.totalSteps - 1"
+          mat-flat-button color="primary"
+          class="appStepperButton"
+          type="button"
+          [disabled]="!this.isValid"
+          (click)="stepper.next()">
+            Next
+        </button>
+
+        <button
+          *ngIf="stepper.selectedIndex === this.totalSteps - 1"
+          mat-flat-button color="primary"
+          class="appStepperButton"
+          type="button"
+          [disabled]="!this.locationIsValid || !this.contactIsValid || !this.observationIsValid"
+          (click)="this.preCheck()">
+            Submit
+        </button>
+
+      </ng-container>
+
+      <ng-container *ngIf="!obsData.inState">
+
+        <button
+          mat-flat-button color="primary"
+          class="appStepperButton"
+          type="button"
+          (click)="this.routeOutOfState()">
+            Next
+        </button>
+
+      </ng-container>
+
+    </ng-container>
+
+  </div>
+
+</footer>
